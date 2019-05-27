@@ -2,11 +2,11 @@
 
 # set colors
   rx_colors <-  c(`yellow`     = "#FFCB05",
-                `grey`         = "#939598",
-                `light yellow` = "#F7D57B",
-                `black`        = "#000000",
-                `dark yellow`  = "#DAAD3E",
-                `light grey`   = "#D9D9D9")
+                  `grey`         = "#939598",
+                  `light yellow` = "#F7D57B",
+                  `black`        = "#000000",
+                  `dark yellow`  = "#DAAD3E",
+                  `light grey`   = "#D9D9D9")
 
 # internal function to return colors
   rx_cols <- function(...) {

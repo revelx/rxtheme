@@ -39,7 +39,7 @@ knitr::opts_chunk$set(
     ggplot(aes(date, hits, color = keyword)) +
     geom_line() +
     geom_point(alpha = .5) +
-    theme_revelx() + # apply 
+    theme_rx() + # apply 
     scale_color_rx()+
     scale_fill_rx()+
     labs(x = "Time", 
@@ -65,7 +65,7 @@ RevelX has a number of predefined palletes
                hits, 
                fill = keyword)) +
     geom_bar( stat="identity" ) +
-    theme_revelx() + # apply 
+    theme_rx() + # apply 
     scale_fill_rx( palette = "marc", reverse = T)+
     labs(x = "Time", 
          y = "Relative Search Popularity",

@@ -5,7 +5,7 @@
 #'
 #' @return
 #'
-theme_revelx <- function ( base_size = 12,
+theme_rx <- function ( base_size = 12,
                            base_family = "Lato",
                            ...)
 {

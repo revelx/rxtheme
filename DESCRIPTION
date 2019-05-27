@@ -1,11 +1,10 @@
 Package: rxtheme
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Provides theme for styling ggplot objects based on RevelX templates
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Bob Rietveld
+Maintainer:  Bob Rietveld <bob.rietveld@revelx.nl>
+Description: Provides a theme and scale color, scale fill function for styling r output.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

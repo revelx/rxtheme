@@ -8,6 +8,7 @@
                   `dark yellow`  = "#DAAD3E",
                   `light grey`   = "#D9D9D9")
 
+
 # internal function to return colors
   rx_cols <- function(...) {
 
@@ -58,8 +59,8 @@
 #'
 #' @examples
   scale_color_rx <- function( palette = "main",
-                            discrete = TRUE,
-                            reverse = FALSE, ...) {
+                              discrete = TRUE,
+                              reverse = FALSE, ...) {
   # assign pallette
     pal <- rx_pal(palette = palette, reverse = reverse)
 

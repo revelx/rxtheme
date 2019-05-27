@@ -43,11 +43,11 @@ knitr::opts_chunk$set(
 
 ## Using the defaults
 
-The package is aimed at 
+The package is aimed at making it easy to produce RevelX styled content to be used in PowerPoint.
 
 ```{r}
 # visualize data with all defaults
-    q_trends %>% 
+   ts<- q_trends %>% 
     get_interest() %>% 
     ggplot(aes(date, hits, color = keyword)) +
     geom_line() +
@@ -70,16 +70,28 @@ RevelX has a number of predefined palletes. Default "main" uses RevelX theme col
 
 ```{r}
 # using a different predefined pallete
-   q_trends %>% 
+    q_trends %>% 
     get_interest() %>% 
     ggplot(aes(date, 
                hits, 
                fill = keyword)) +
     geom_bar( stat="identity" ) +
     theme_rx() + # apply 
-    scale_fill_rx( palette = "marc", reverse = T)+
+    scale_fill_rx( palette = "main", reverse = F)+
     labs(x = "Time", 
          y = "Relative Search Popularity",
          title = "")
+
+
+save_rx( file_name ="tes32.png", type ="three")
+
+ggsave("g.png", 
+       width = 29.87, 
+       height = 12.14, 
+       units = "cm",
+       dpi = "print")
+
+
+
 ```
 

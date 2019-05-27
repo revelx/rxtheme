@@ -18,7 +18,6 @@ save_rx <- function( ggplot_object,
                      type = "wide",
                      dpi = "print",
                      ...) {
-#
 
 # set width dimension
   width_rx <-   case_when(

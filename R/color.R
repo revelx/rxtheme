@@ -20,7 +20,7 @@
   }
 
 # set palletes
-  rx_palettes <- list( `main`  = rx_cols( "yellow", "grey","black","dark yellow","light grey","light yellow" ),
+  rx_palettes <- list( `main`  = rx_cols( "yellow", "black","dark yellow","light grey","light yellow","grey" ),
                        `marc`  = rx_cols( "light yellow", "yellow","light grey" )
   )
 

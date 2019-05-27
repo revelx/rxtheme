@@ -11,5 +11,7 @@ LazyData: true
 Suggests: 
     knitr,
     rmarkdown
+Import:
+  ggplot
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1

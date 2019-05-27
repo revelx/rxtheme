@@ -4,7 +4,7 @@ author: "Bob Rietveld, "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{RevelX Theme}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -12,13 +12,14 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width = 8
 )
 ```
 
 
 
-## Figures
+## Set Up
 
 
 
@@ -33,11 +34,6 @@ knitr::opts_chunk$set(
     q <- c("Bob", "Margot" ,"Marc")
     q_trends <- trendy(q, from = "2019-03-01", to = Sys.Date())
     
-
-    
-
-    
-
 ```
 
 
@@ -47,7 +43,7 @@ The package is aimed at making it easy to produce RevelX styled content to be us
 
 ```{r}
 # visualize data with all defaults
-   ts<- q_trends %>% 
+    q_trends %>% 
     get_interest() %>% 
     ggplot(aes(date, hits, color = keyword)) +
     geom_line() +
@@ -65,33 +61,55 @@ The package is aimed at making it easy to produce RevelX styled content to be us
 
 ## Using a different palette
 
-RevelX has a number of predefined palletes. Default "main" uses RevelX theme colors as outlined in the brand guidelines.
+RevelX has a number of predefined palletes. Default "main" uses RevelX theme colors as outlined in the brand guidelines. You can also reverse the color palette by calling ` reverse = TRUE`. 
+
+You can see the available palettes by calling `show_palette`.
 
 
 ```{r}
-# using a different predefined pallete
+
+# show palette
+  show_palette()
+
+# create bar chart
     q_trends %>% 
     get_interest() %>% 
     ggplot(aes(date, 
                hits, 
                fill = keyword)) +
-    geom_bar( stat="identity" ) +
+    geom_bar( stat ="identity") +
     theme_rx() + # apply 
-    scale_fill_rx( palette = "main", reverse = F)+
-    labs(x = "Time", 
-         y = "Relative Search Popularity",
-         title = "")
+    scale_fill_rx( palette = "marc", reverse = T)+
+    labs( x = "Time", 
+          y = "Relative Search Popularity",
+          title = "")
+
+```
 
 
-save_rx( file_name ="tes32.png", type ="three")
+## Using discrete vs continous colors
 
-ggsave("g.png", 
-       width = 29.87, 
-       height = 12.14, 
-       units = "cm",
-       dpi = "print")
+For continous variables you can set a color scheme based on the palette of choice. 
 
+```{r}
+
+# using a different predefined pallete
+  ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +  
+  scale_fill_rx( palette = "main", 
+                 discrete  = F, 
+                 reverse = F)
 
 
 ```
 
+
+## Saving a file
+
+For convenience the save_rx function saves the output in a PowerPoint ready format. the `save_rx` function is a wrapper for `ggsave` and thus supports most features. 
+
+The first argument is the ggplot itself, so it's better to use all the argument names when calling the function. You can pass a ggplot object to the save_rx function so you can automate
+
+  `save_rx( type = "wide", 
+            file_name = "slide.png",
+            dpi = "screen")`

@@ -8,7 +8,7 @@ You can install the released version of rxtheme from github using
 
 ``` r
 
-devtools::install_github('https://github.com/revelx/rxtheme', build_vignettes = TRUE)
+devtools::install_github("revelx/rxtheme", build_vignettes = TRUE)
 
 ```
 

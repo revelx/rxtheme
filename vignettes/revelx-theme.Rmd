@@ -1,0 +1,74 @@
+---
+title: "Application of RevelX Theme"
+author: "Bob Rietveld, "
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+
+## Figures
+
+
+
+```{r, fig.show='hold'}
+
+  library(ggplot2)
+  library(rxtheme)
+  library(trendyy)
+  library(tidyverse)
+    
+# get some google trend data
+    q <- c("Bob", "Margot" ,"Marc")
+    q_trends <- trendy(q, from = "2019-03-01", to = Sys.Date())
+    
+# visualize data with all defaults
+    q_trends %>% 
+    get_interest() %>% 
+    ggplot(aes(date, hits, color = keyword)) +
+    geom_line() +
+    geom_point(alpha = .5) +
+    theme_revelx() + # apply 
+    scale_color_rx()+
+    scale_fill_rx()+
+    labs(x = "Time", 
+         y = "Relative Search Popularity",
+         title = "")
+    
+    
+
+    
+
+```
+
+## Using a different palette
+
+RevelX has a number of predefined palletes
+
+
+```{r}
+# using a different predefined pallete
+   q_trends %>% 
+    get_interest() %>% 
+    ggplot(aes(date, 
+               hits, 
+               fill = keyword)) +
+    geom_bar( stat="identity" ) +
+    theme_revelx() + # apply 
+    scale_fill_rx( palette = "marc", reverse = T)+
+    labs(x = "Time", 
+         y = "Relative Search Popularity",
+         title = "")
+```
+

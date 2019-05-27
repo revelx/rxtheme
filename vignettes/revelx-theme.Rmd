@@ -33,6 +33,19 @@ knitr::opts_chunk$set(
     q <- c("Bob", "Margot" ,"Marc")
     q_trends <- trendy(q, from = "2019-03-01", to = Sys.Date())
     
+
+    
+
+    
+
+```
+
+
+## Using the defaults
+
+The package is aimed at 
+
+```{r}
 # visualize data with all defaults
     q_trends %>% 
     get_interest() %>% 
@@ -46,15 +59,13 @@ knitr::opts_chunk$set(
          y = "Relative Search Popularity",
          title = "")
     
-    
-
-    
-
 ```
+
+
 
 ## Using a different palette
 
-RevelX has a number of predefined palletes
+RevelX has a number of predefined palletes. Default "main" uses RevelX theme colors as outlined in the brand guidelines.
 
 
 ```{r}

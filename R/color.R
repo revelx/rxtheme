@@ -1,7 +1,7 @@
 ### COLORS ###
 
 # set colors
-  rx_colors <-  c(`yellow`     = "#FFCB05",
+  rx_colors <-  c(`yellow`       = "#FFCB05",
                   `grey`         = "#939598",
                   `light yellow` = "#F7D57B",
                   `black`        = "#000000",
@@ -19,12 +19,9 @@
   }
 
 # set palletes
-  rx_palettes <- list( `main`  = rx_cols("yellow", "grey","black","dark yellow","light grey","light yellow"),
-                       `marc`  = rx_cols("light yellow", "yellow","light grey")
+  rx_palettes <- list( `main`  = rx_cols( "yellow", "grey","black","dark yellow","light grey","light yellow" ),
+                       `marc`  = rx_cols( "light yellow", "yellow","light grey" )
   )
-
-
-
 
 
 # internal function define pallette function
@@ -39,9 +36,19 @@
   }
 
 
+#' Show available palettes
+#'
+#' @return
+#' Names list with palette names , color names and hex codes
+#' @export
+  show_palette <- function(){
+    return(rx_palettes)
+  }
+
 #' Scale color ggplot object
 #'
 #' @param palette
+#' select which pallete
 #' @param discrete
 #' @param reverse
 #' @param ...

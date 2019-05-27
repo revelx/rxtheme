@@ -8,6 +8,8 @@ scale_color_rx(palette = "main", discrete = TRUE, reverse = FALSE,
   ...)
 }
 \arguments{
+\item{palette}{select which pallete}
+
 \item{...}{}
 }
 \description{

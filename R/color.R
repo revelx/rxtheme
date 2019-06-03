@@ -1,13 +1,17 @@
 ### COLORS ###
 
 # set colors
-  rx_colors <-  c(`yellow`       = "#FFCB05",
-                  `grey`         = "#939598",
-                  `light yellow` = "#F7D57B",
-                  `black`        = "#000000",
-                  `dark yellow`  = "#DAAD3E",
-                  `light grey`   = "#D9D9D9")
-
+  rx_colors <-  c(`yellow`                = "#FFCB05",
+                  `grey`                  = "#939598",
+                  `light yellow`          = "#F7D57B",
+                  `black`                 = "#000000",
+                  `dark yellow`           = "#DAAD3E",
+                  `light grey`            = "#D9D9D9",
+                  `dark puce`             = "#433A3F",
+                  `deep space sparkle`    = "#3D5A6C",
+                  `green sheen`           = "#72A98F",
+                  `kiwi`                  = "#8DE969",
+                   `maximum green yellow` = "#CBEF43" )
 
 # internal function to return colors
   rx_cols <- function(...) {
@@ -20,8 +24,10 @@
   }
 
 # set palletes
+  ## green pallete from https://coolors.co/433a3f-3d5a6c-72a98f-8de969-cbef43
   rx_palettes <- list( `main`  = rx_cols( "yellow", "black","dark yellow","light grey","light yellow","grey" ),
-                       `marc`  = rx_cols( "light yellow", "yellow","light grey" )
+                       `marc`  = rx_cols( "light yellow", "yellow","light grey"),
+                       `green` = rx_cols ("dark puce", "deep space sparkle","green sheen","kiwi","maximum green yellow")
   )
 
 

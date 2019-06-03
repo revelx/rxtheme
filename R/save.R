@@ -13,7 +13,7 @@
 #'
 #' @return
 #' @export
-save_rx <- function( ggplot_object,
+save_rx <- function( plot = ggplot_object,
                      file_name =" export.png",
                      type = "wide",
                      dpi = "print",
@@ -32,7 +32,7 @@ save_rx <- function( ggplot_object,
                           type == "wide"  ~  12.14,
                           type == "semi"  ~  9.86,
                           type == "three" ~  11.79,
-                          TRUE ~  29.87
+                          TRUE ~  12.14
                         )
 
 

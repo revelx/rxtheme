@@ -12,8 +12,7 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.width = 8
+  comment = "#>"
 )
 ```
 
@@ -51,6 +50,7 @@ The package is aimed at making it easy to produce RevelX styled content to be us
     theme_rx() + # apply 
     scale_color_rx()+
     scale_fill_rx()+
+    theme(legend.position = "top")
     labs(x = "Time", 
          y = "Relative Search Popularity",
          title = "")
@@ -72,17 +72,22 @@ You can see the available palettes by calling `show_palette`.
   show_palette()
 
 # create bar chart
-    q_trends %>% 
-    get_interest() %>% 
-    ggplot(aes(date, 
-               hits, 
-               fill = keyword)) +
-    geom_bar( stat ="identity") +
-    theme_rx() + # apply 
-    scale_fill_rx( palette = "marc", reverse = T)+
-    labs( x = "Time", 
-          y = "Relative Search Popularity",
-          title = "")
+    t <-q_trends %>% 
+        get_interest() %>% 
+        ggplot(aes(date, 
+                   hits, 
+                   fill = keyword)) +
+        geom_bar( stat ="identity") +
+        theme_rx( background_color = "transparent" , grid_lines = '#eeeeee' ) + # apply 
+        scale_fill_rx( palette = "marc", reverse = T)+
+        labs( x = "Time", 
+              y = "Relative Search Popularity",
+              title = "")
+    
+    save_rx( plot = t, 
+             type = "semi", 
+             file_name = "slide_three.png",
+             dpi = "print" )
 
 ```
 
@@ -96,6 +101,7 @@ For continous variables you can set a color scheme based on the palette of choic
 # using a different predefined pallete
   ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile() +  
+  theme_rx()+
   scale_fill_rx( palette = "main", 
                  discrete  = F, 
                  reverse = F)

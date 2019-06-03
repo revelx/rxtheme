@@ -4,12 +4,10 @@
 \alias{save_rx}
 \title{Function for saving ggplot objects to PowerPoint ready images}
 \usage{
-save_rx(ggplot_object, file_name = " export.png", type = "wide",
-  dpi = "print", ...)
+save_rx(plot = ggplot_object, file_name = " export.png",
+  type = "wide", dpi = "print", ...)
 }
 \arguments{
-\item{ggplot_object}{defaults to the last shown image}
-
 \item{file_name}{file name including folder and extension. Png is prefferred.}
 
 \item{type}{wide for full width of the slide, semi for half of the slide, three for three quarters of the slide}
@@ -17,6 +15,8 @@ save_rx(ggplot_object, file_name = " export.png", type = "wide",
 \item{dpi}{print, screen, retina or a dpi setting. 300 is usually fine.}
 
 \item{...}{}
+
+\item{ggplot_object}{defaults to the last shown image}
 }
 \description{
 Function for saving ggplot objects to PowerPoint ready images

@@ -4,10 +4,19 @@
 \alias{theme_rx}
 \title{Function to apply RevelX Theme to a ggplot object}
 \usage{
-theme_rx(base_size = 12, base_family = "Lato", ...)
+theme_rx(base_size = 12, base_family = "Lato", grid_lines = NA,
+  background_color = "white", ...)
 }
 \arguments{
-\item{base_family}{}
+\item{base_size}{Set the base size, default is 12}
+
+\item{base_family}{Set Font familiy , default is Lato}
+
+\item{grid_lines}{Set gridline color, default is NA. Color can be a valid hex value.}
+
+\item{background_color}{Set background color, default is white. Color can be a valid hex value.}
+
+\item{...}{}
 }
 \value{
 

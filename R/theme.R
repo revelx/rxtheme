@@ -6,7 +6,7 @@
 #' @return
 #'
 theme_rx <- function ( base_size = 12,
-                           base_family = "Lato",
+                       base_family = "Lato",
                            ...)
 {
   half_line <- (base_size / 2)
@@ -51,6 +51,7 @@ theme_rx <- function ( base_size = 12,
     legend.title = element_blank(),
     legend.title.align = NULL,
     legend.position = "bottom",
+    legend.spacing.x = unit(0.2, 'cm'),
     legend.direction = NULL,
     legend.justification = "center",
     legend.box = NULL,

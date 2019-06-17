@@ -8,6 +8,8 @@
 #' Set gridline color, default is NA. Color can be a valid hex value.
 #' @param background_color
 #' Set background color, default is white. Color can be a valid hex value.
+#' #' @param angle
+#' Set angle of x axis labels
 #' @param ...
 #'
 #' @return
@@ -15,6 +17,7 @@
 theme_rx <- function ( base_size = 12,
                        base_family = "Lato",
                        grid_lines = NA,
+                       angle = 0,
                        background_color = "white",
                        ...)
 {
@@ -50,7 +53,7 @@ theme_rx <- function ( base_size = 12,
     axis.line.y = element_blank(),
     axis.text = element_text(size = rel(0.8),
                              colour = "black"),
-    axis.text.x = element_text(margin = margin(t = 0.8 * half_line/2), vjust = 1),
+    axis.text.x = element_text(margin = margin(t = 0.8 * half_line/2), vjust = 1, angle = angle),
     axis.text.y = element_text(margin = margin(r = 0.8 * half_line/2), hjust = 1),
     axis.ticks = element_line(colour = "grey20"),
     axis.ticks.length = unit(half_line/2, "pt"),

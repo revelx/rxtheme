@@ -5,7 +5,7 @@
 \title{Function to apply RevelX Theme to a ggplot object}
 \usage{
 theme_rx(base_size = 12, base_family = "Lato", grid_lines = NA,
-  background_color = "white", ...)
+  angle = 0, background_color = "white", ...)
 }
 \arguments{
 \item{base_size}{Set the base size, default is 12}
@@ -14,7 +14,9 @@ theme_rx(base_size = 12, base_family = "Lato", grid_lines = NA,
 
 \item{grid_lines}{Set gridline color, default is NA. Color can be a valid hex value.}
 
-\item{background_color}{Set background color, default is white. Color can be a valid hex value.}
+\item{background_color}{Set background color, default is white. Color can be a valid hex value.
+#' @param angle
+Set angle of x axis labels}
 
 \item{...}{}
 }

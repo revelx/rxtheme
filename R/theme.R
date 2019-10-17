@@ -8,27 +8,28 @@
 #' Set gridline color, default is NA. Color can be a valid hex value.
 #' @param background_color
 #' Set background color, default is white. Color can be a valid hex value.
-#' #' @param angle
+#' @param angle
 #' Set angle of x axis labels
+#' @param legend_position
+#' Set legend position, default is bottom
 #' @param ...
 #'
 #' @return
 #'
 theme_rx <- function ( base_size = 12,
                        base_family = "Lato",
-                       grid_lines = NA,
+                       grid_lines = "#eeeeee",
                        angle = 0,
                        background_color = "white",
+                       legend_position = "bottom",
                        ...)
 {
 
-  # set half line
+# set half line
   half_line <- (base_size / 2)
 
 
-  # set background
-
-
+# set theme
   theme(
     line = element_line( colour = "black",
                          size = 0.5,
@@ -46,7 +47,7 @@ theme_rx <- function ( base_size = 12,
                          hjust = 0.5,
                          vjust = 0.5,
                          angle = 0,
-                         margin = margin(),
+                       #  margin =  margin(b = half_line * 1.2),
                          debug = FALSE),
     axis.line = element_line(),
     axis.line.x = element_blank(),
@@ -70,7 +71,7 @@ theme_rx <- function ( base_size = 12,
     legend.text.align = NULL,
     legend.title = element_blank(),
     legend.title.align = NULL,
-    legend.position = "bottom",
+    legend.position = legend_position,
     legend.spacing.x = unit(0.2, 'cm'),
     legend.direction = NULL,
     legend.justification = "center",
@@ -87,5 +88,5 @@ theme_rx <- function ( base_size = 12,
     strip.switch.pad.grid = unit(0.1, "cm"),
     strip.switch.pad.wrap = unit(0.1, "cm"),
     plot.background = element_rect( colour = background_color, fill = background_color),
-    plot.title = element_text(size = rel(1.2), margin = margin(b = half_line * 1.2)))
+    plot.title = element_text(size = rel(1.2), hjust = 0.5 , margin = margin(b = half_line * 1.2)))
 }

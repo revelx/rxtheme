@@ -30,8 +30,8 @@ knitr::opts_chunk$set(
   library(tidyverse)
     
 # get some google trend data
-    q <- c("Bob", "Margot" ,"Marc")
-    q_trends <- trendy(q, from = "2019-03-01", to = Sys.Date())
+    q <- c("Natuurmonumenten", "Wereld Natuur Fonds")
+    q_trends <- trendy(q, from = "2019-01-01", to = Sys.Date())
     
 ```
 
@@ -47,10 +47,10 @@ The package is aimed at making it easy to produce RevelX styled content to be us
     ggplot(aes(date, hits, color = keyword)) +
     geom_line() +
     geom_point(alpha = .5) +
-    theme_rx()+ # apply 
-    scale_color_rx( palette = "green" )+
-    scale_fill_rx(palette = "green" )+
-    theme(legend.position = "top")
+    theme_rx( base_family = "Ubuntu", grid_lines = "#eeeeee")+ # apply 
+    scale_color_rx( palette = "natuurmonumenten" , reverse = T)+
+    scale_fill_rx(  palette = "natuurmonumenten"   , reverse = T)+
+    theme(legend.position = "top") +
     labs(x = "Time", 
          y = "Relative Search Popularity",
          title = "")
@@ -72,23 +72,23 @@ You can see the available palettes by calling `show_palette`.
   show_palette()
 
 # create bar chart
-    t <-    q_trends %>% 
+         q_trends %>% 
             get_interest() %>% 
             ggplot(aes(date, 
                        hits, 
-                       fill = keyword)) +
-            geom_bar( stat ="identity") +
-            theme_rx( background_color = "transparent" , grid_lines = "#eeeeee") + # apply 
-            scale_fill_rx( palette = "green", reverse = F)+
+                       color = keyword)) +
+            geom_line( ) +
+            theme_rx( background_color = "transparent" , grid_lines = "#eeeeee", base_family = "Ubuntu") + # apply 
+            scale_color_rx( palette = "natuurmonumenten", reverse = F)+
+            facet_grid(.~keyword)+
             labs( x = "Time", 
                   y = "Relative Search Popularity",
                   title = "") 
     
     save_rx( plot = t, 
-             type = "semi", 
+             type = "wide", 
              file_name = "slide_three.png",
              dpi = "print" )
-t
      
 ```
 
@@ -103,9 +103,9 @@ For continous variables you can set a color scheme based on the palette of choic
   ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile() +  
   theme_rx()+
-  scale_fill_rx( palette = "green", 
+  scale_fill_rx( palette = "natuurmonumenten", 
                  discrete  = F, 
-                 reverse = T)
+                 reverse = F)
 
 
 ```
